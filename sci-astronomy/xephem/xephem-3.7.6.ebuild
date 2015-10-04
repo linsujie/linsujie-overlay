@@ -55,12 +55,12 @@ src_install() {
 	make_desktop_entry xephem XEphem ${PN}
 
 	[ -d /lib64 ] && insinto /usr/lib64 || insinto /usr/libpng
-	for i in astro ip jpegd lilxml png z
+	for i in astro ip lilxml
 	do
 		doins -r ../../lib${i}/lib${i}.a
 	done
 
-	for i in astro ip jpegd lilxml png z
+	for i in astro ip lilxml png
 	do
 		insinto /usr/include/${PN}/${i}
 		doins -r ../../lib${i}/*.h
